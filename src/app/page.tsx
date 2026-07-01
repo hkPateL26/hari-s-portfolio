@@ -87,8 +87,8 @@ const BentoCard = ({ children, className = "", delay = 0, onClick, initial, whil
       initial={initial || { opacity: 0, y: 40, scale: 0.95 }}
       whileInView={whileInView || { opacity: 1, y: 0, scale: 1 }}
       viewport={viewport || { once: false, margin: "-50px" }}
-      whileHover={{ scale: 0.98, transition: { type: "spring", stiffness: 400, damping: 25 } }}
-      transition={{ type: "spring", stiffness: 100, damping: 20, delay, ease: "easeOut" }}
+      whileHover={{ scale: 0.98, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }}
+      transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
       onMouseMove={handleMouseMove}
       className={`group relative rounded-3xl md:rounded-[2rem] bg-white/[0.03] border border-white/10 overflow-hidden backdrop-blur-md shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:border-white/20 transition-colors ${onClick ? 'cursor-pointer' : ''} ${className}`}
     >
@@ -434,7 +434,7 @@ export default function BentoPortfolio() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             whileHover={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
+            transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="group relative rounded-3xl md:rounded-[2rem] bg-white/[0.03] border border-white/10 overflow-hidden backdrop-blur-md shadow-2xl min-h-[200px] md:min-h-0 md:col-span-1 lg:col-span-1 flex flex-col items-center justify-center cursor-pointer"
           >
             <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')] bg-center bg-no-repeat bg-cover opacity-20 filter invert group-hover:scale-110 transition-transform duration-700" />
@@ -507,7 +507,7 @@ export default function BentoPortfolio() {
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="min-h-[120px] md:min-h-0 md:col-span-1 lg:col-span-1 flex rounded-3xl md:rounded-[2rem] bg-white/[0.03] border border-white/10 overflow-hidden backdrop-blur-md shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
           >
             <div 
@@ -605,7 +605,7 @@ export default function BentoPortfolio() {
             viewport={{ once: false, margin: "-100px" }}
             variants={{
               hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
-              visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8 } }
+              visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
             }}
             className="relative group"
           >
@@ -1068,7 +1068,7 @@ export default function BentoPortfolio() {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ type: "spring", bounce: 0.5, duration: 1 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-4 md:mb-8"
           >
             Ready to scale?
@@ -1087,7 +1087,7 @@ export default function BentoPortfolio() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, type: "spring" }}
+            transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-3 md:gap-6 mb-6 md:mb-12 px-4 w-full max-w-3xl mx-auto"
           >
             <MagneticButton href="mailto:haripatel267998@gmail.com" className="col-span-2 md:col-span-1 w-full md:w-auto px-4 py-3 md:px-8 md:py-4 rounded-full bg-white text-black font-semibold hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-shadow flex items-center justify-center gap-2 text-sm md:text-base">
