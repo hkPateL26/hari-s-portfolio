@@ -708,15 +708,6 @@ export default function BentoPortfolio() {
                       light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
                       dark: ['#161b22', '#064e3b', '#065f46', '#059669', '#10b981'],
                     }}
-                    transformData={(data) => {
-                      // Find the first day with a contribution
-                      const firstContributionIndex = data.findIndex(d => d.count > 0);
-                      if (firstContributionIndex === -1) return data;
-                      
-                      // Keep some empty weeks as padding (e.g., 2 weeks = 14 days) before the first commit
-                      const startIndex = Math.max(0, firstContributionIndex - 14);
-                      return data.slice(startIndex, data.length);
-                    }}
                     renderBlock={(block, activity) => {
                       // Deterministic pseudo-random delay based on the date string
                       const pseudoRandom = (activity.date.charCodeAt(activity.date.length - 1) * activity.date.charCodeAt(activity.date.length - 2) * 17) % 1500 / 1000;
@@ -746,19 +737,19 @@ export default function BentoPortfolio() {
 
         {/* DETAILED PROJECTS SECTION */}
         <section id="projects" className="max-w-7xl mx-auto mt-6 md:mt-16 relative z-30 bg-[#050505]">
-          <div className="mb-8 md:mb-12 flex flex-col justify-start border-b border-white/10 pb-4 md:pb-6 relative">
-            {/* Live pulsing dot next to title to indicate active status */}
-            <div className="absolute top-2 right-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-emerald-400 text-[10px] uppercase font-mono tracking-widest font-bold">Live Pipelines</span>
-            </div>
-            
-            <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 md:mb-4 tracking-tight">Featured Deployments</h2>
-              <p className="text-sm md:text-base text-white/50">Large-scale systems I've built and maintained.</p>
+          <div className="mb-8 md:mb-12 flex flex-col justify-start border-b border-white/10 pb-4 md:pb-6 gap-3 md:gap-0 relative">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 md:mb-4 tracking-tight">Featured Deployments</h2>
+                <p className="text-sm md:text-base text-white/50">Large-scale systems I've built and maintained.</p>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 w-fit">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-emerald-400 text-[10px] uppercase font-mono tracking-widest font-bold">Live Pipelines</span>
+              </div>
             </div>
           </div>
 
