@@ -540,7 +540,7 @@ export default function BentoPortfolio() {
         </motion.section>
 
         {/* EXPERIENCE TIMELINE (WITH PARALLAX) */}
-        <motion.section style={{ y: yTimeline }} id="experience" className="max-w-4xl mx-auto mt-6 md:mt-16 relative z-20">
+        <motion.section id="experience" className="max-w-4xl mx-auto mt-16 relative z-20">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 md:mb-4 tracking-tight">Experience & Education</h2>
             <p className="text-sm md:text-base text-white/50">My academic and professional journey.</p>
