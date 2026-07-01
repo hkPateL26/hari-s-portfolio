@@ -723,7 +723,7 @@ export default function BentoPortfolio() {
                       
                       return (
                         <motion.rect
-                          {...block.props}
+                          {...(block.props as any)}
                           key={activity.date}
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
